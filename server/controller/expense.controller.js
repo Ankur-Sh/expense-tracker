@@ -1,4 +1,3 @@
-// controllers.js
 const Expense = require('../models/Expense.js');
 
 async function getAllExpenses(req, res) {

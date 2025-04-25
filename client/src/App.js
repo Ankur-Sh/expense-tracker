@@ -5,6 +5,8 @@ import ExpenseForm from './components/ExpenseForm';
 import ExpenseList from './components/ExpenseList';
 import Dashboard from './components/Dashboard';
 import './App.css';
+import SignupPage from './components/SignupPage.js';
+import SigninPage from './components/SigninPage.js';
 
 function App() {
   return (
@@ -23,6 +25,9 @@ function App() {
           <Route path="/add" element={<ExpenseForm />} />
           <Route path="/edit/:id" element={<ExpenseForm />} />
           <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/signup" element={<SignupPage />} />
+        <Route path="/signin" element={<SigninPage />} />
+
         </Routes>
       </main>
       <footer className="app-footer">

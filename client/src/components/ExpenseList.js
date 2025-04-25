@@ -1,8 +1,7 @@
-// src/components/ExpenseList.js
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-import './ExpenseList.css'; // Import CSS
+import './ExpenseList.css';
 
 function ExpenseList() {
   const [expenses, setExpenses] = useState([]);
@@ -13,7 +12,6 @@ function ExpenseList() {
       setExpenses(res.data);
     } catch (error) {
       console.error("Error fetching expenses:", error);
-      // Optionally display an error message to the user
     }
   };
 
@@ -24,7 +22,6 @@ function ExpenseList() {
         fetchExpenses();
       } catch (error) {
         console.error("Error deleting expense:", error);
-        // Optionally display an error message to the user
       }
     }
   };
