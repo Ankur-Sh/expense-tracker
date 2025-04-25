@@ -1,0 +1,79 @@
+.expense-list-container {
+    padding: 20px;
+  }
+  
+  .expense-list-container h2 {
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .expense-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .expense-item {
+    background-color: #fff;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .expense-details {
+    flex-grow: 1;
+  }
+  
+  .amount {
+    font-weight: bold;
+    color: #28a745;
+    margin-right: 10px;
+  }
+  
+  .category {
+    color: #007bff;
+    margin-right: 10px;
+  }
+  
+  .date {
+    color: #6c757d;
+  }
+  
+  .description {
+    color: #555;
+    font-style: italic;
+  }
+  
+  .expense-actions button,
+  .expense-actions a {
+    padding: 8px 12px;
+    margin-left: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    text-decoration: none;
+  }
+  
+  .edit-button {
+    background-color: #007bff;
+    color: white;
+    transition: background-color 0.3s ease;
+  }
+  
+  .edit-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .delete-button {
+    background-color: #dc3545;
+    color: white;
+    transition: background-color 0.3s ease;
+  }
+  
+  .delete-button:hover {
+    background-color: #c82333;
+  }
