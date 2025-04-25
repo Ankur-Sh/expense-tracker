@@ -1,10 +1,16 @@
 const mongoose = require('mongoose');
+const { Schema } = mongoose;
 
-const expenseSchema = new mongoose.Schema({
+const expenseSchema = new Schema({
   amount: Number,
   category: String,
   description: String,
-  date: Date
+  date: Date,
+  userId: {
+    type: Schema.Types.ObjectId,
+    ref: 'User',
+    required: true,
+  },
 });
 
 module.exports = mongoose.model('Expense', expenseSchema);

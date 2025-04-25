@@ -1,9 +1,8 @@
-// src/components/Dashboard.js
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Pie, Bar } from 'react-chartjs-2';
 import { Chart, ArcElement, BarElement, CategoryScale, LinearScale } from 'chart.js';
-import './Dashboard.css'; // Import CSS
+import './Dashboard.css';
 
 Chart.register(ArcElement, BarElement, CategoryScale, LinearScale);
 
@@ -11,12 +10,19 @@ function Dashboard() {
   const [expenses, setExpenses] = useState([]);
   const [categoryData, setCategoryData] = useState({});
   const [monthlyData, setMonthlyData] = useState({});
+  const token = localStorage.getItem('token');
 
   useEffect(() => {
-    axios.get('http://localhost:5001/api/expenses')
-      .then(res => setExpenses(res.data))
-      .catch(error => console.error("Error fetching expenses:", error));
-  }, []);
+    if (token) {
+      axios.get('http://localhost:5001/api/expenses', {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      })
+        .then(res => setExpenses(res.data))
+        .catch(error => console.error("Error fetching expenses:", error));
+    }
+  }, [token]);
 
   useEffect(() => {
     const categorySummary = expenses.reduce((acc, curr) => {
@@ -32,6 +38,7 @@ function Dashboard() {
     }, {});
     setMonthlyData(monthlySummary);
   }, [expenses]);
+
 
   const pieChartData = {
     labels: Object.keys(categoryData),

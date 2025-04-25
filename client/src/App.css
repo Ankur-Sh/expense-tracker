@@ -1,57 +1,70 @@
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 0;
-    background-color: #f4f4f4;
-    color: #333;
-  }
-  
-  .app-header {
-    background-color: #343a40;
-    color: white;
-    padding: 15px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .app-header h1 {
-    margin: 0;
-    font-size: 24px;
-  }
-  
-  .app-nav {
-    display: flex;
-    gap: 15px;
-  }
-  
-  .app-nav .nav-link {
-    color: white;
-    text-decoration: none;
-    padding: 8px 12px;
-    border-radius: 4px;
-    transition: background-color 0.3s ease;
-  }
-  
-  .app-nav .nav-link:hover {
-    background-color: #555;
-  }
-  
-  .app-main {
-    padding: 20px;
-    min-height: calc(100vh - 60px - 50px);
-  }
-  
-  .app-footer {
-    background-color: #343a40;
-    color: white;
-    text-align: center;
-    padding: 15px;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-  }
-  
-  .app-footer p {
-    margin: 0;
-    font-size: 14px;
-  }
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+.app-header {
+  background-color: #343a40;
+  color: white;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.app-header h1 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.app-nav {
+  display: flex;
+  gap: 15px;
+}
+
+.app-nav .nav-link {
+  color: white;
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.app-nav .nav-link:hover {
+  background-color: #555;
+}
+
+.app-main {
+  padding: 20px;
+  min-height: calc(100vh - 60px - 50px);
+}
+
+.app-footer {
+  background-color: #343a40;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.app-footer p {
+  margin: 0;
+  font-size: 14px;
+}
+
+.header-right .nav-link {
+  text-decoration: none;
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 5px;
+  background-color: transparent;
+  transition: background-color 0.3s ease;
+}
+
+.header-right .nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}

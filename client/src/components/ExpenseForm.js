@@ -7,25 +7,36 @@ function ExpenseForm() {
   const [form, setForm] = useState({ amount: '', category: '', description: '', date: '' });
   const navigate = useNavigate();
   const { id } = useParams();
+  const token = localStorage.getItem('token');
 
   useEffect(() => {
-    if (id) {
-      axios.get('http://localhost:5001/api/expenses')
+    if (id && token) {
+      axios.get('http://localhost:5001/api/expenses', {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      })
         .then(res => {
           const exp = res.data.find(e => e._id === id);
           if (exp) setForm(exp);
         })
         .catch(error => console.error("Error fetching expense:", error));
+    } else if (id && !token) {
+      console.warn("Not authorized to edit. Token missing.");
+      navigate('/signin');
     }
-  }, [id]);
+  }, [id, token, navigate]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
+      const headers = {
+        Authorization: `Bearer ${token}`,
+      };
       if (id) {
-        await axios.put(`http://localhost:5001/api/expenses/${id}`, form);
+        await axios.put(`http://localhost:5001/api/expenses/${id}`, form, { headers });
       } else {
-        await axios.post('http://localhost:5001/api/expenses', form);
+        await axios.post('http://localhost:5001/api/expenses', form, { headers });
       }
       navigate('/');
     } catch (error) {

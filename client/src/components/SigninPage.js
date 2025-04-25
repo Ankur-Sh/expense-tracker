@@ -2,12 +2,11 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './SigninPage.css';
 
-const SigninPage = () => {
+const SigninPage = ({ onSignIn }) => {
   const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [message, setMessage] = useState('');
-  const [token, setToken] = useState('');
 
   const handleSignin = async (e) => {
     e.preventDefault();
@@ -22,9 +21,10 @@ const SigninPage = () => {
 
       const data = await response.json();
       setMessage(data.message);
-      if (response.ok && data.token) {
-        setToken(data.token);
-        console.log('Signin successful!', data.token);
+      if (response.ok && data.token && data.username) {
+        localStorage.setItem('token', data.token);
+        onSignIn(data.username);
+        console.log('Signin successful!', data.token, data.username);
         navigate('/');
       } else {
         console.error('Signin failed:', data.message);
@@ -39,7 +39,6 @@ const SigninPage = () => {
     <div className="container">
       <h2 className="heading">Sign In</h2>
       {message && <p className="message">{message}</p>}
-      {token && <p className="successMessage">Successfully signed in!</p>}
       <form onSubmit={handleSignin} className="form">
         <div className="inputGroup">
           <label htmlFor="email" className="label">Email:</label>

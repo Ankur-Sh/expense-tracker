@@ -2,7 +2,7 @@
 const express = require('express');
 const cors = require('cors');
 const router = express.Router();
-const authController = require('../controller/authController.js'); // Assuming you'll create this
+const authController = require('../controller/authController.js');
 
 router.post('/signup', authController.signup);
 router.post('/signin', authController.signin);

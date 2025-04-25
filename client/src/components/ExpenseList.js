@@ -5,10 +5,15 @@ import './ExpenseList.css';
 
 function ExpenseList() {
   const [expenses, setExpenses] = useState([]);
+  const token = localStorage.getItem('token');
 
   const fetchExpenses = async () => {
     try {
-      const res = await axios.get('http://localhost:5001/api/expenses');
+      const res = await axios.get('http://localhost:5001/api/expenses', {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
       setExpenses(res.data);
     } catch (error) {
       console.error("Error fetching expenses:", error);
@@ -18,7 +23,11 @@ function ExpenseList() {
   const handleDelete = async (id) => {
     if (window.confirm('Are you sure you want to delete this expense?')) {
       try {
-        await axios.delete(`http://localhost:5001/api/expenses/${id}`);
+        await axios.delete(`http://localhost:5001/api/expenses/${id}`, {
+          headers: {
+            Authorization: `Bearer ${token}`, // Include the token in the headers
+          },
+        });
         fetchExpenses();
       } catch (error) {
         console.error("Error deleting expense:", error);
@@ -27,8 +36,10 @@ function ExpenseList() {
   };
 
   useEffect(() => {
-    fetchExpenses();
-  }, []);
+    if (token) {
+      fetchExpenses();
+    }
+  }, [token]);
 
   return (
     <div className="expense-list-container">
