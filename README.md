@@ -17,8 +17,10 @@ Make sure you have the following installed on your system:
 
 First, you need to clone the project repository to your local machine. Open your terminal or command prompt and run the following command:
 
-``bash
+Bash
+
 git clone [https://github.com/Ankur-Sh/expense-tracker.git](https://github.com/Ankur-Sh/expense-tracker.git)
+
 This will create a directory named expense-tracker containing the project files.
 
 Navigating to the Project Directory
@@ -27,6 +29,7 @@ Once the cloning is complete, navigate into the project directory using the comm
 Bash
 
 cd expense-tracker
+
 Now you are inside the main project folder. You'll find two important subdirectories here: client (for the React frontend) and server (for the Node.js backend).
 
 Setting up the Frontend (React)
@@ -35,6 +38,7 @@ Navigate to the client directory:
 Bash
 
 cd client
+
 Install dependencies:
 
 The React frontend relies on various npm packages. Install them by running:
@@ -42,6 +46,7 @@ The React frontend relies on various npm packages. Install them by running:
 Bash
 
 npm install
+
 This command will download and install all the necessary packages listed in the package.json file within the client directory.
 
 Start the frontend development server:
@@ -51,6 +56,7 @@ Once the dependencies are installed, you can start the React development server 
 Bash
 
 npm start
+
 This command will typically open your application in a new tab in your default web browser, usually at http://localhost:3000. Any changes you make to the frontend code will usually be hot-reloaded in the browser.
 
 Setting up the Backend (Node.js/Express)
@@ -60,6 +66,7 @@ Bash
 
 cd ..
 cd server
+
 Install dependencies:
 
 The Node.js backend also has its own set of dependencies. Install them using:
@@ -67,6 +74,7 @@ The Node.js backend also has its own set of dependencies. Install them using:
 Bash
 
 npm install
+
 This will install the packages listed in the package.json file within the server directory.
 
 Configure Environment Variables (if applicable):
