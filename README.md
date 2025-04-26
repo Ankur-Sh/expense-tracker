@@ -81,7 +81,7 @@ Bash
 
 node server.js
 
-Check the scripts section in the server/package.json file to see the available commands. The backend server typically runs on a different port, often http://localhost:5000 or a similar port. The console output will usually indicate the port the server is running on.
+Check the scripts section in the server/package.json file to see the available commands. The backend server typically runs on a different port, often http://localhost:5001 or a similar port. The console output will usually indicate the port the server is running on.
 
 Running the Application
 Once both the frontend and backend servers are running, you should be able to access the Expense Tracker application in your web browser (usually at http://localhost:3000). The frontend will communicate with the backend API to fetch and manage your expense data.
