@@ -1,3 +1,5 @@
+###Documentation--> client/readme.md
+
 # Expense Tracker Application
 
 This repository contains the source code for a full-stack expense tracking application. It features a React-based frontend for a smooth user experience and a Node.js/Express backend to handle data management and API endpoints.
