@@ -1,5 +1,7 @@
 ###Documentation--> client/readme.md
 
+###key points: in backend you have to pass MONGO_URL:your mongo url and also a JWT_SECRET: anything like project
+
 # Expense Tracker Application
 
 This repository contains the source code for a full-stack expense tracking application. It features a React-based frontend for a smooth user experience and a Node.js/Express backend to handle data management and API endpoints.
